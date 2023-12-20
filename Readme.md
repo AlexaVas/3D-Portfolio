@@ -1,4 +1,4 @@
-# 3D Portfolio by Alexandra V.
+# 3D Portfolio 
 
 ## Setup
 
