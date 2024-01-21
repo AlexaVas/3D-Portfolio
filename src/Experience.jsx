@@ -1,23 +1,34 @@
-import { OrbitControls} from '@react-three/drei'
-import * as THREE from 'three'
+import {OrbitControls,ScrollControls, Scroll} from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import Land from './components/Land'
 import  Environment from './components/Environment'
-import { useControls } from 'leva'
+import Movement from './components/Movement'
+import Interface from './components/Interface'
 
 
-export default function Experience()
+
+
+export default function Experience({setScroll})
 {
+
 
  
     return (
       <>
+        {/* <Perf position="top-left" /> */}
         
-        <Perf position="top-left" />
-        <OrbitControls makeDefault />
-        
-        <Environment/>
-        <Land />
+        <Environment />
+
+        <ScrollControls pages={5} damping={0.5}>
+          <Land />
+          <Movement />
+
+          <Scroll html>
+            <Interface setScroll={setScroll}/>
+          </Scroll>
+
+        </ScrollControls>
       </>
     );
 }
+

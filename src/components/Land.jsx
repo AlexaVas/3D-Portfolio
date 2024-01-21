@@ -37,7 +37,7 @@ export default function Land ()
     {
         waterMaterial.current.uTime += delta
 
-        console.log(waterMaterial.current.uTime)
+      
     })
    
 return (

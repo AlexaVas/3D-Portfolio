@@ -2,19 +2,35 @@ import './style.css'
 import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
+import Indicator from './components/Indicator.jsx'
+import Header from './components/Header.jsx'
+import { useState } from 'react'
+
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
-root.render(
+function App(){
+
+    const [scroll, setScroll] = useState(0)
+
+return(
+
+ <>
     <Canvas
         flat
         camera={ {
             fov: 45,
             near: 0.1,
             far: 200,
-            position: [ - 4, 3, 6 ]
+            position: [ - 70, 4, -25 ]
         } }
     >
-        <Experience />
+        <Experience setScroll={setScroll} />
     </Canvas>
+    <Indicator scroll={scroll}/>
+    </>
+
 )
+
+}
+root.render(<App/>)

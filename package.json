@@ -9,15 +9,23 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "4.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
     "vite": "^4.5.0"
   },
   "dependencies": {
+    "@gsap/react": "^2.0.2",
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "@react-three/drei": "^9.88.7",
     "@react-three/fiber": "^8.15.8",
+    "gsap": "^3.12.4",
     "leva": "^0.9.35",
     "r3f-perf": "^7.1.2",
     "react": "18.2",
     "react-dom": "18.2",
+    "react-scrollbars-custom": "^4.1.1",
     "three": "^0.158.0",
     "vite-plugin-glsl": "^1.2.1"
   }
