@@ -5,7 +5,7 @@ import { Dialog, Popover, Transition } from "@headlessui/react";
 import Section from './content/Section'
 import About from "./content/About";
 import Projects from "./content/Projects";
-import ContactForm from "./content/contactForm";
+import ContactForm from "./content/ContactForm";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -18,7 +18,7 @@ export default function Header({contactMe, setContactMeOpen, setProjectsOpen, pr
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [aboutOpen, setAboutOpen] = useState(false);
-  // const [projectsOpen, setProjectsOpen] = useState(false);
+ 
  
    const handleClick = (contentFunc) => {
      contentFunc(true);

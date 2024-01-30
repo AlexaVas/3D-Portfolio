@@ -1,8 +1,6 @@
 /** @format */
 import { useRef } from "react";
-import gsap from "gsap";
 import { useScroll} from "@react-three/drei";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useFrame } from "@react-three/fiber";
 
 
