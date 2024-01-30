@@ -49,7 +49,10 @@ const exportData = {name,email,message}
 const sendMessage = async () =>{   
 try{
     setLoading(true)
-    const send = await axios.post("http://localhost:5005/contact", exportData)
+    const send = await axios.post(
+      "https://mail-sender-l71pcx5ee-alexavas.vercel.app/contact",
+      exportData
+    );
     setResponse(send.data)
     setLoading(false)
 
