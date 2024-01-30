@@ -20,6 +20,7 @@
     "@heroicons/react": "^2.1.1",
     "@react-three/drei": "^9.88.7",
     "@react-three/fiber": "^8.15.8",
+    "axios": "^1.6.7",
     "gsap": "^3.12.4",
     "leva": "^0.9.35",
     "r3f-perf": "^7.1.2",

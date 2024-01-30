@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html,
 body,
 #root
@@ -15,17 +16,41 @@ body,
     z-index: 0;
 }
 
+.r3f {
+    touch-action: none;
+}
+
 .htmlScreen iframe
 {
     width: 1024px;
     height: 670px;
     border: none;
     background: #000000 !important; 
+    touch-action: auto!important;
     
+    
+}
+
+.htmlScreen .test {
+    width: 1024px;
+    height: 670px;
+    border: none;
+    border-radius: 10px;
+    background: #f5f5f5fd !important;
+    z-index: 100;
+    touch-action: none !important;
 }
 
 .htmlScreen{
     position: fixed !important;
-    background: #00000000 !important;
+    z-index: -10;
+    background: #37313700 !important;
+
+   
 }
 
+/* @supports (height: 1001vh) {
+    body {
+        height: 1001vh;
+    }
+} */

@@ -2,57 +2,28 @@
 
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
+import Section from './content/Section'
+import About from "./content/About";
+import Projects from "./content/Projects";
+import ContactForm from "./content/contactForm";
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
 
 
-export default function Header() {
+export default function Header({contactMe, setContactMeOpen, setProjectsOpen, projectsOpen}) {
+
+  
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [aboutOpen, setAboutOpen] = useState(false);
+  // const [projectsOpen, setProjectsOpen] = useState(false);
+ 
+   const handleClick = (contentFunc) => {
+     contentFunc(true);
+     setMobileMenuOpen(false)
+   };
 
   return (
     <header className="z-1 top-0 absolute w-screen flex justify-end items-end">
@@ -70,20 +41,20 @@ export default function Header() {
 
         <section className="hidden lg:flex lg:gap-x-12">
           <a
-            href="#"
+            onClick={() => setAboutOpen(true)}
             className="text-sm font-semibold leading-6 p-1 rounded-sm text-gray-900 hover:hover:bg-[#201d1f0b]">
             About
           </a>
-          <a
-            href="#"
+          <button
+            onClick={() => setProjectsOpen(true)}
             className="text-sm font-semibold leading-6 p-1 text-gray-900 rounded-sm hover:bg-[#201d1f0b]">
             Projects
-          </a>
-          <a
-            href="#"
+          </button>
+          <button
+            onClick={() => setContactMeOpen(true)}
             className="text-sm font-semibold leading-6 p-1 text-gray-900 rounded-sm hover:bg-[#201d1f0b]">
             Contact Me
-          </a>
+          </button>
         </section>
       </nav>
 
@@ -112,19 +83,19 @@ export default function Header() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6 text-center">
+                <div className="space-y-2 py-6 text-center items-center">
                   <a
-                    href="#"
+                    onClick={() => handleClick(setAboutOpen)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                     About
                   </a>
                   <a
-                    href="#"
+                    onClick={() => handleClick(setProjectsOpen)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                     Projects
                   </a>
                   <a
-                    href="#"
+                    onClick={() => handleClick(setContactMeOpen)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                     Contact me
                   </a>
@@ -134,6 +105,19 @@ export default function Header() {
           </Dialog.Panel>
         </Dialog>
       </Transition>
+
+      {/* Content */}
+      <Section section={aboutOpen} setSection={setAboutOpen}>
+        <About />
+      </Section>
+
+      <Section section={projectsOpen} setSection={setProjectsOpen}>
+        <Projects />
+      </Section>
+
+      <Section section={contactMe} setSection={setContactMeOpen}>
+        <ContactForm/>
+      </Section>
     </header>
   );
 }

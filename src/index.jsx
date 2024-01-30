@@ -12,25 +12,35 @@ const root = ReactDOM.createRoot(document.querySelector('#root'))
 function App(){
 
     const [scroll, setScroll] = useState(0)
+    const [contactMe, setContactMeOpen] = useState(false);
+    const [projectsOpen, setProjectsOpen] = useState(false);
 
-return(
-
- <>
+return (
+  <>
     <Canvas
-        flat
-        camera={ {
-            fov: 45,
-            near: 0.1,
-            far: 200,
-            position: [ - 70, 4, -25 ]
-        } }
-    >
-        <Experience setScroll={setScroll} />
+      className="r3f"
+      flat
+      camera={{
+        fov: 45,
+        near: 0.1,
+        far: 200,
+        position: [-70, 4, -25],
+      }}>
+      <Experience
+        setScroll={setScroll}
+        setContactMeOpen={setContactMeOpen}
+        setProjectsOpen={setProjectsOpen}
+      />
     </Canvas>
-    <Indicator scroll={scroll}/>
-    </>
-
-)
+    <Indicator
+      scroll={scroll}
+      setContactMeOpen={setContactMeOpen}
+      contactMe={contactMe}
+      setProjectsOpen={setProjectsOpen}
+      projectsOpen={projectsOpen}
+    />
+  </>
+);
 
 }
 root.render(<App/>)

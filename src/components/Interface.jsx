@@ -1,13 +1,10 @@
 /** @format */
-import { useRef, useEffect, useState, useLayoutEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useScroll} from "@react-three/drei";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useFrame } from "@react-three/fiber";
-import Indicator from "./Indicator";
 
-gsap.registerPlugin(ScrollTrigger)
 
 const Section = ({ children }) => {
   return (
@@ -21,7 +18,7 @@ const Section = ({ children }) => {
   );
 };
 
-export default function Interface({setScroll}) {
+export default function Interface({setScroll,setProjectsOpen}) {
 
   const container = useRef();
    const intro = useRef();
@@ -36,7 +33,7 @@ useFrame((state)=>{
     
     let opacity1 = 1 - scroll.range(0, 1 / 18);
     let opacity2 = 1 - scroll.range(0, 1 / 8);
-    let opacity3 = 1 - scroll.range(1 / 2, 1 / 20);
+    let opacity3 = 1 - scroll.range(1/2.1, 1/50);
 
     container.current.style.opacity = opacity1;
     intro.current.style.opacity = opacity2
@@ -70,7 +67,7 @@ useFrame((state)=>{
             className=" text-center md:text-left font-sans font-medium text-xl md:text-2xl md:left-5 relative 
           top-10 tracking-wid">
             I'm a{" "}
-            <a className="rounded-sm bg-gradient-to-r from-white via-purple-100 via-30% to-purple-300">
+            <a className="rounded-xl animate-pulse p-1 bg-gradient-to-r from-white via-purple-100 via-30% to-purple-300 hover:animate-none">
               Front-End Developer
             </a>{" "}
             based in Berlin.
@@ -78,11 +75,12 @@ useFrame((state)=>{
         </Section>
         <Section></Section>
         <Section>
-          <h1
-            ref={middle}
-            className="font-sans font-medium text-2xl md:right-20 tracking-wid self-end">
-            I create 3D web experiences.{" "}
-          </h1>
+          <div
+            className="font-sans font-medium text-2xl md:mr-20 md:self-end text-center"
+            ref={middle}>
+            <h1>I create 3D web experiences. </h1>
+            <button onClick={()=>setProjectsOpen(true)} className="outline rounded-2xl p-1 m-1 text-sm">explore</button>
+          </div>
         </Section>
       </div>
     </>

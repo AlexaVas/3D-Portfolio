@@ -1,11 +1,13 @@
 import { gsap } from "gsap"
+import { useGSAP } from "@gsap/react";
 import { useScroll, Html, Scroll } from "@react-three/drei"
 import { useState, useLayoutEffect, useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import { useControls } from "leva";
 import Computer from "./Computer";
+import ComputerTest from "./ComputerTest";
 
-export default function Movement(){
+export default function Movement({setContactMeOpen}){
   const scroll = useScroll();
   const tl = useRef();
   const [camera, setCamera] = useState();
@@ -39,7 +41,7 @@ useFrame((state, delta) => {
 
 });
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     if (camera) {
       tl.current = gsap.timeline({
         defaults: { duration: 2, ease: "power1.inOut" },
@@ -69,7 +71,8 @@ useFrame((state, delta) => {
 
   return (
     <>
-      <Computer on={on} />
+      {/* <Computer on={on} /> */}
+      <ComputerTest on={on} setContactMeOpen={setContactMeOpen}/>
     </>
   );
 }

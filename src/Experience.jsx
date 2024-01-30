@@ -8,7 +8,7 @@ import Interface from './components/Interface'
 
 
 
-export default function Experience({setScroll})
+export default function Experience({setScroll, setContactMeOpen, setProjectsOpen})
 {
 
 
@@ -16,17 +16,16 @@ export default function Experience({setScroll})
     return (
       <>
         {/* <Perf position="top-left" /> */}
-        
+
         <Environment />
 
-        <ScrollControls pages={5} damping={0.5}>
+        <ScrollControls pages={6} damping={0.5}>
           <Land />
-          <Movement />
+          <Movement setContactMeOpen={setContactMeOpen} />
 
           <Scroll html>
-            <Interface setScroll={setScroll}/>
+            <Interface setScroll={setScroll} setProjectsOpen={setProjectsOpen} />
           </Scroll>
-
         </ScrollControls>
       </>
     );
