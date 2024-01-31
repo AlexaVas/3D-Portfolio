@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
 import Indicator from './components/Indicator.jsx'
-import Header from './components/Header.jsx'
 import { useState } from 'react'
+
+
 
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
@@ -17,6 +18,7 @@ function App(){
 
 return (
   <>
+  
     <Canvas
       className="r3f"
       flat
@@ -32,6 +34,8 @@ return (
         setProjectsOpen={setProjectsOpen}
       />
     </Canvas>
+    
+
     <Indicator
       scroll={scroll}
       setContactMeOpen={setContactMeOpen}

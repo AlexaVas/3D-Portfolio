@@ -15,6 +15,7 @@ export default function Projects() {
       technologies: ["JS", "Node.js", "React", "Tailwind", "MongoDb"],
       img: "/pictures/Barkly.jpg",
       dimension: "2D",
+      link: "https://barkly-pups.netlify.app/",
     },
     {
       key: 2,
@@ -23,6 +24,7 @@ export default function Projects() {
       technologies: ["JS", "CSS"],
       img: "/pictures/Summer_in_the_garden.jpg",
       dimension: "2D",
+      link: "https://alexavas.github.io/Module1_Final_Project/",
     },
     {
       key: 3,
@@ -31,6 +33,7 @@ export default function Projects() {
       technologies: ["JS", "R3F"],
       img: "/pictures/3D-Portfolio.jpg",
       dimension: "3D",
+      link: "",
     },
     {
       key: 4,
@@ -39,8 +42,26 @@ export default function Projects() {
       technologies: ["JS", "Three.js"],
       img: "/pictures/HH 3D.jpg",
       dimension: "3D",
+      link: "https://three-js-haunted-house-gold.vercel.app/",
     },
-  
+    {
+      key: 5,
+      name: "Portal Scene",
+      description: "WebGL experience",
+      technologies: ["GLSL", "Three.js"],
+      img: "/pictures/Portal_Scene.jpg",
+      dimension: "3D",
+      link: "https://portal-scene-six.vercel.app/",
+    },
+    {
+      key: 6,
+      name: "2D Portfolio",
+      description: "WebGL experience",
+      technologies: ["JS", "CSS", "Animations"],
+      img: "/pictures/2D_Portfolio.jpg",
+      dimension: "2D",
+      link: "https://alexavas.github.io/Portfolio/",
+    },
   ]);
 
 
@@ -107,11 +128,13 @@ export default function Projects() {
       <div className="flex flex-row gap-5 flex-wrap justify-center items-center pb-10 ">
         {(filter.length > 0 ? filter : projects).map((project) => (
           <div className="text-center m-3" key={project.key}>
+            <a href={project.link}>
             <img
               className="w-64 h-64 object-cover hover:object-scale-down hover:shadow-none rounded  shadow-md"
               src={
                 project.img ? project.img : "/pictures/3D-Portfolio.jpg"
               }></img>
+            </a>
             <h1 className="text-xl m-1">{project.name}</h1>
           </div>
         ))}
