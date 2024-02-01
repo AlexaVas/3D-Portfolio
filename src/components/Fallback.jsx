@@ -1,8 +1,5 @@
 export default function Fallback()
 {
-
-    console.log('fallback')
-
 return (
   <>
     <div className="bg-gray-100 w-full h-full flex items-center justify-around flex-col">
