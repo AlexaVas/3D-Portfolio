@@ -31,7 +31,7 @@ export default function Projects() {
       name: "Framer Plugin",
       description: "Framer Plugin - Blob",
       technologies: ["GLSL", "Typescript", "React", "Express"],
-      img: "/pictures/Plugin2.png",
+      img: "/pictures/plugin.jpg",
       dimension: "3D",
       link: "https://www.framer.com/marketplace/plugins/blob/",
     },
