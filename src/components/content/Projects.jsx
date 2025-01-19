@@ -9,10 +9,55 @@ export default function Projects() {
   
   const [projects, setProjects] = useState([
     {
+      key: 7,
+      name: "Hyven - Customer",
+      description: "3D World",
+      technologies: ["R3F", "React", "GLSL"],
+      img: "/pictures/hyven.jpg",
+      dimension: "3D",
+      link: "https://hyven.vercel.app/",
+    },
+    {
+      key: 8,
+      name: "Business Website - Customer",
+      description: "Business Website",
+      technologies: ["NextJS", "PHP", "Headless CMS", "SEO"],
+      img: "/pictures/aliaj.jpeg",
+      dimension: "2D",
+      link: "https://aliajevent.com/",
+    },
+    {
+      key: 9,
+      name: "Framer Plugin",
+      description: "Framer Plugin - Blob",
+      technologies: ["GLSL", "Typescript", "React", "Express"],
+      img: "/pictures/Plugin2.png",
+      dimension: "3D",
+      link: "https://www.framer.com/marketplace/plugins/blob/",
+    },
+    {
+      key: 10,
+      name: "AR Project",
+      description: "AR Project - Bilby",
+      technologies: ["WebXR", "Three.js", "VanillaJS"],
+      img: "/pictures/ar.jpg",
+      dimension: "3D",
+      link: "https://ar-bilby.vercel.app/",
+    },
+    {
+      key: 11,
+      name: "Face Blurring Editor",
+      description: "AR Project - Bilby",
+      technologies: ["WebXR", "Three.js", "VanillaJS", "360"],
+      img: "/pictures/360.jpg",
+      dimension: "3D",
+      link: "https://face-blurring.vercel.app/",
+    },
+    {
       key: 1,
       name: "Barkly",
       description: "Full-Stack Application",
-      technologies: ["JS", "Node.js", "React", "Tailwind", "MongoDb"],
+      technologies: ["JS", "Express", "React", "Tailwind", "MongoDb"],
       img: "/pictures/Barkly.jpg",
       dimension: "2D",
       link: "https://barkly-pups.netlify.app/",
@@ -110,32 +155,51 @@ export default function Projects() {
 
   return (
     <>
-      <div className="flex flex-row gap-3 m-5">
+      <div className="flex flex-row gap-3 m-5 ">
         <button
           onClick={() => handleClick("3D")}
-          className={`rounded-2xl p-2 text-xs shadow-sm font-bold bg-gray-100 ${
+          className={`rounded-2xl p-2 text-xs shadow-sm font-bold bg-gray-100 transition-all duration-300 ${
             threeD ? "bg-gray-200" : "bg-none"
           } hover:bg-gray-200`}>
           3D
         </button>
         <button
           onClick={() => handleClick("2D")}
-          className={`rounded-2xl shadow-sm bg-gray-100 p-2 text-xs font-bold ${twoD?'bg-gray-200':'bg-none'} hover:bg-gray-200`}>
+          className={`rounded-2xl shadow-sm bg-gray-100 p-2 text-xs font-bold transition-all duration-300${
+            twoD ? "bg-gray-200" : "bg-none"
+          } hover:bg-gray-200`}>
           2D
         </button>
       </div>
 
-      <div className="flex flex-row gap-5 flex-wrap justify-center items-center pb-10 ">
+      <div className="flex  flex-row gap-5 flex-wrap justify-center items-center pb-10">
         {(filter.length > 0 ? filter : projects).map((project) => (
-          <div className="text-center m-3" key={project.key}>
-            <a href={project.link}>
-            <img
-              className="w-64 h-64 object-cover hover:object-scale-down hover:shadow-none rounded  shadow-md"
-              src={
-                project.img ? project.img : "/pictures/3D-Portfolio.jpg"
-              }></img>
-            </a>
-            <h1 className="text-xl m-1">{project.name}</h1>
+          <div
+            className="text-center flex flex-col justify-center items-center space-y-3 "
+            style={{ width: "350px", height: "380px" }} // Uniform size
+          >
+            <div
+              className="text-center  overflow-hidden rounded hover:shadow-gray-500  transition-shadow shadow-md shadow-gray-300"
+              key={project.key}>
+              <a href={project.link}>
+                <img
+                  className="w-64 h-64 object-cover hover:scale-110  transition-all duration-500"
+                  alt={project.description}
+                  src={
+                    project.img ? project.img : "/pictures/3D-Portfolio.jpg"
+                  }></img>
+              </a>
+            </div>
+            <h1 className="text-xl">{project.name}</h1>
+            <article className="flex gap-3 text-sm flex-row flex-wrap w-full relative  justify-center ">
+              {project.technologies.map((tech, i) => {
+                return (
+                  <p className="bg-gray-100 rounded-xl p-1 shadow-md ">
+                    {tech}
+                  </p>
+                );
+              })}
+            </article>
           </div>
         ))}
       </div>

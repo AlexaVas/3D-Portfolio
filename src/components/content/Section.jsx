@@ -18,7 +18,7 @@ return (
       leaveTo="opacity-0"
       as={Fragment}>
       <Dialog as="div" onClose={setSection}>
-        <div className="fixed inset-0 z-10 flex justify-center">
+        <div className="fixed inset-0 z-10 flex justify-center ">
           <Dialog.Panel className="fixed  w-screen  h-screen border-none rounded-lg  md:top-[12%] z-10 md:w-11/12 md:h-5/6 overflow-y-auto bg-white p-6  sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-end justify-end">
               <button

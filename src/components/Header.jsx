@@ -1,7 +1,7 @@
 /** @format */
 
 import { Fragment, useState } from "react";
-import { Dialog, Popover, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import Section from './content/Section'
 import About from "./content/About";
 import Projects from "./content/Projects";
@@ -39,20 +39,20 @@ export default function Header({contactMe, setContactMeOpen, setProjectsOpen, pr
           </button>
         </div>
 
-        <section className="hidden lg:flex lg:gap-x-12">
+        <section className="hidden lg:flex lg:gap-x-12 ">
           <a
             onClick={() => setAboutOpen(true)}
-            className="text-sm font-semibold leading-6 p-1 rounded-sm text-gray-900 hover:hover:bg-[#201d1f0b]">
+            className="text-sm font-semibold leading-6 py-1 px-2 transition-all duration-300 rounded-full text-gray-900 hover:bg-[#201d1f0b]">
             About
           </a>
           <button
             onClick={() => setProjectsOpen(true)}
-            className="text-sm font-semibold leading-6 p-1 text-gray-900 rounded-sm hover:bg-[#201d1f0b]">
+            className="text-sm font-semibold leading-6 py-1 px-2 transition-all duration-300 text-gray-900 rounded-full hover:bg-[#201d1f0b]">
             Projects
           </button>
           <button
             onClick={() => setContactMeOpen(true)}
-            className="text-sm font-semibold leading-6 p-1 text-gray-900 rounded-sm hover:bg-[#201d1f0b]">
+            className="text-sm font-semibold leading-6 py-1 px-2 transition-all duration-300 text-gray-900 rounded-full hover:bg-[#201d1f0b]">
             Contact Me
           </button>
         </section>
