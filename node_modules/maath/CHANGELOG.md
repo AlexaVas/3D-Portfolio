@@ -1,5 +1,11 @@
 # maath
 
+## 0.10.8
+
+### Patch Changes
+
+- fix: lower three peer dep requirement
+
 ## 0.10.7
 
 ### Patch Changes
