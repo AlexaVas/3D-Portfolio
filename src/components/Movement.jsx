@@ -22,9 +22,13 @@ export default function Movement({setContactMeOpen}){
 
 const targetLookAt = { x: -2, y: 1.5, z: 2 };
 const [on, setOn] = useState(false)
-const sittingAnimation = useAnimationStore((state) => state.sitting);
+const sittingAnimation = useAnimationStore((state) => state.sit);
 const waveAnimation = useAnimationStore((state) => state.wave);
+const idleAnimation = useAnimationStore((state) => state.idle);
+const pointAnimation = useAnimationStore((state) => state.point);
+const animationSet = useAnimationStore((state) => state.animationSet);
 
+console.log(animationSet)
 useFrame((state, delta) => {
   setCamera(state.camera);
 
@@ -43,14 +47,20 @@ useFrame((state, delta) => {
   }
 
 //character
+if (scroll.offset > 0.9) {
+pointAnimation()
+} else if ((scroll.offset > 0.8) & (scroll.offset < 0.9)) {
+  sittingAnimation();
+} else if (scroll.offset > 0.6 && scroll.offset < 0.8) {
+  waveAnimation();
+} else {
+  idleAnimation();
+} 
 
- if (scroll.offset > 0.79) {
-   sittingAnimation()
- } else {
-   waveAnimation()
- }
 
 });
+
+
 
   useGSAP(() => {
     if (camera) {

@@ -10,18 +10,16 @@ export default function Character({...props}) {
 
   //Zustand
 
-  const sittingAnimation = useAnimationStore((state) => state.sitting);
-  const waveAnimation = useAnimationStore((state) => state.wave);
-
-
-  const currAnimation = useAnimationStore((state) => state.curAnimation);
   const initializeAnimationSet = useAnimationStore(
     (state) => state.initializeAnimationSet
   );
   // Set All your animations
   const animationSet = {
-    sitting: 0,
-    wave: 1,
+    wave:3,
+    sit:1,
+    idle:2,
+    point:0
+
   };
 
   useEffect(() => {

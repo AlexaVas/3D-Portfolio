@@ -24,12 +24,10 @@ export default create(
         });
       },
 
-      sitting: () => {
+      sit: () => {
         set((state) => {
-          if (
-            state.curAnimation !== state.animationSet.sitting
-          ) {
-            return { curAnimation: state.animationSet.sitting };
+          if (state.curAnimation !== state.animationSet.sit) {
+            return { curAnimation: state.animationSet.sit };
           }
 
           return {};
@@ -39,6 +37,24 @@ export default create(
         set((state) => {
           if (state.curAnimation !== state.animationSet.wave) {
             return { curAnimation: state.animationSet.wave };
+          }
+          return {};
+        });
+      },
+
+      idle: () => {
+        set((state) => {
+          if (state.curAnimation !== state.animationSet.idle) {
+            return { curAnimation: state.animationSet.idle };
+          }
+          return {};
+        });
+      },
+
+      point: () => {
+        set((state) => {
+          if (state.curAnimation !== state.animationSet.point) {
+            return { curAnimation: state.animationSet.point };
           }
           return {};
         });

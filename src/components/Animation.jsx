@@ -4,7 +4,7 @@ import { useFBX, useAnimations } from "@react-three/drei";
 import { useEffect, useRef, Suspense , useMemo} from "react";
 import * as THREE from "three";
 // import useGame from "./stores/useGame";
-import Character from "./Character";
+
 
 import useAnimationStore from "../stores/useAnimationStore";
 
@@ -61,5 +61,5 @@ console.log(curAnimation)
   );
 }
 
-useFBX.preload("sitting_c.fbx");
+useFBX.preload("animations.fbx");
 
