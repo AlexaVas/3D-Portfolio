@@ -4,7 +4,6 @@ import { useScroll, Html, Scroll } from "@react-three/drei"
 import { useState, useLayoutEffect, useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import { useControls } from "leva";
-import Computer from "./Computer";
 import ComputerTest from "./ComputerTest";
 import useAnimationStore from "../stores/useAnimationStore";
 export default function Movement({setContactMeOpen}){
@@ -28,7 +27,7 @@ const idleAnimation = useAnimationStore((state) => state.idle);
 const pointAnimation = useAnimationStore((state) => state.point);
 const animationSet = useAnimationStore((state) => state.animationSet);
 
-console.log(animationSet)
+
 useFrame((state, delta) => {
   setCamera(state.camera);
 

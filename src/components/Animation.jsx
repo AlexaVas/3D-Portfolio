@@ -15,7 +15,7 @@ export default function Animations({ children}) {
   // Load FBX and extract animations
   const sittingAnimation = useFBX("animations.fbx");
   const { animations } = sittingAnimation;
-console.log(animations)
+
   // Bind animations to the group
   const { actions } = useAnimations(animations, group);
 
@@ -28,7 +28,7 @@ console.log(animations)
 
   useEffect(() => {
     if (!actions) return;
-console.log(curAnimation)
+
     // Play the first action
     const firstActionKey = Object.keys(actions)[curAnimation];
     if (firstActionKey && !hasStarted.current) {
