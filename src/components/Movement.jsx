@@ -35,7 +35,7 @@ useFrame((state, delta) => {
 
   state.camera.lookAt(-1.39, 0, -0.6);
 //laptop
-  if(scroll.offset > 0.6){
+  if(scroll.offset > 0.9){
 
     setOn(true)
 
@@ -46,9 +46,9 @@ useFrame((state, delta) => {
   }
 
 //character
-if (scroll.offset > 0.9) {
-pointAnimation()
-} else if ((scroll.offset > 0.8) & (scroll.offset < 0.9)) {
+if (scroll.offset > 0.95) {
+  pointAnimation()
+} else if ((scroll.offset > 0.8) & (scroll.offset < 0.95)) {
   sittingAnimation();
 } else if (scroll.offset > 0.6 && scroll.offset < 0.8) {
   waveAnimation();
