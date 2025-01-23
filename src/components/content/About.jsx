@@ -10,20 +10,24 @@ return (
         className="top-1/2 h-1/2 min-h-52 min-w-52 w-1/2 md:h-1/4 md:w-1/4 lg:mb-4 object-fill rounded-lg gap-8 shadow-2xl"
         src={"/pictures/portfolio_pic.jpeg"}></img>
       <section className="m-4 mb-10  min-w-52  max-w-xl text-left">
-        <h1 className="text-xl">
-          <p className="font-medium">Hello and Welcome to my portfolio! 👋</p>{" "}
-          <br></br>
+        <h1 className="text-xl font-semibold">
+          Hello and Welcome to my portfolio! 👋{" "}
+        </h1>
+        <br></br>
+        <article className="text-md text-left">
+          {" "}
           My name is Alexandra, I am based in Berlin, Germany, but originally
           come from Slovakia. I am a Front-End Developer that enjoys creating 3D
           Web Experiences. For my 3D projects, I use pure Three.js/React Three
           Fiber, and custom made shaders written in GLSL.
-        </h1>
+        </article>
+
         <br></br>
-        <h2 className="text-base">
+        <article className="text-md">
           <p>WebGL JavaScript React Three.js R3F GLSL</p>
           <p>Tailwind GSAP Blender - UV unwrapping and texture baking</p>
           <p>MongoDB Node.js Express</p>
-        </h2>
+        </article>
         <br></br>
         <div className="flex gap-3">
           <a

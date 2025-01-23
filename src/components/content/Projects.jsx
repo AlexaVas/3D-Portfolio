@@ -158,14 +158,14 @@ export default function Projects() {
       <div className="flex flex-row gap-3 m-5 ">
         <button
           onClick={() => handleClick("3D")}
-          className={`rounded-2xl p-2 text-xs shadow-sm font-bold bg-gray-100 transition-all duration-300 ${
+          className={`rounded-full p-2 text-md shadow-sm font-bold bg-gray-100 transition-all duration-300 ${
             threeD ? "bg-gray-200" : "bg-none"
           } hover:bg-gray-200`}>
           3D
         </button>
         <button
           onClick={() => handleClick("2D")}
-          className={`rounded-2xl shadow-sm bg-gray-100 p-2 text-xs font-bold transition-all duration-300${
+          className={`rounded-full shadow-sm bg-gray-100 p-2 text-md font-bold transition-all duration-300${
             twoD ? "bg-gray-200" : "bg-none"
           } hover:bg-gray-200`}>
           2D

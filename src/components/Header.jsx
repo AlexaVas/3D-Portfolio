@@ -6,6 +6,7 @@ import Section from './content/Section'
 import About from "./content/About";
 import Projects from "./content/Projects";
 import ContactForm from "./content/ContactForm";
+import ContactButtons from "./content/ContactButtons";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -116,7 +117,7 @@ export default function Header({contactMe, setContactMeOpen, setProjectsOpen, pr
       </Section>
 
       <Section section={contactMe} setSection={setContactMeOpen}>
-        <ContactForm/>
+        <ContactButtons/>
       </Section>
     </header>
   );
