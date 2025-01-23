@@ -27,25 +27,24 @@ return (
           <h2 className="text-lg font-medium text-black">
             Reach out to me on LinkedIn
           </h2>
-          <button className="px-6 py-2 text-black bg-blue-300 rounded-2xl shadow-md hover:bg-blue-200 transition-all duration-300">
-            <a href="https://www.linkedin.com/in/alexandra-vasinova-819178195/">
-              Connect on LinkedIn
-            </a>
-          </button>
+          <a
+            href="https://www.linkedin.com/in/alexandra-vasinova-819178195/"
+            className=" inline-block px-6 py-2 text-black bg-blue-300 rounded-2xl shadow-md hover:bg-blue-200 transition-all duration-300">
+            Connect on LinkedIn
+          </a>
         </div>
 
         <p className="text-sm font-medium text-gray-500">OR</p>
 
         <div className="text-center space-y-3">
           <h2 className="text-lg font-medium text-black">
-            Book an Appointment{" "}
+            Book an Appointment
           </h2>
-          <button className="px-6 py-2 text-black bg-purple-300 rounded-2xl shadow-md hover:bg-purple-200 transition-all duration-300">
-            <a href="https://calendly.com/alexandra-vasinova/morphio">
-              {" "}
-              Book Now
-            </a>
-          </button>
+          <a
+            href="https://calendly.com/alexandra-vasinova/morphio"
+            className="inline-block px-6 py-2 text-black bg-purple-300 rounded-2xl shadow-md hover:bg-purple-200 transition-all duration-300">
+            Book Now
+          </a>
         </div>
       </section>
     </div>
