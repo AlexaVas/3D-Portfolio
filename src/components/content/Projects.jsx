@@ -9,6 +9,15 @@ export default function Projects() {
   
   const [projects, setProjects] = useState([
     {
+      key: 12,
+      name: "Ring Configurator",
+      description: "Configurator",
+      technologies: ["React", "Typescript", "Three.js", "Blender"],
+      img: "/pictures/Config_Phone.jpg",
+      dimension: "3D",
+      link: "https://jewellery-configurator.vercel.app/",
+    },
+    {
       key: 7,
       name: "Hyven - Customer",
       description: "3D World",
