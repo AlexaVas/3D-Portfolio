@@ -43,17 +43,17 @@ export default function Header({contactMe, setContactMeOpen, setProjectsOpen, pr
         <section className="hidden lg:flex lg:gap-x-12 ">
           <a
             onClick={() => setAboutOpen(true)}
-            className="text-sm font-semibold leading-6 py-1 px-2 transition-all duration-300 rounded-full text-gray-900 hover:bg-[#201d1f0b]">
+            className="text-sm cursor-pointer font-semibold leading-6 py-1 px-2 transition-all duration-300 rounded-full text-gray-900 hover:bg-[#201d1f0b]">
             About
           </a>
           <button
             onClick={() => setProjectsOpen(true)}
-            className="text-sm font-semibold leading-6 py-1 px-2 transition-all duration-300 text-gray-900 rounded-full hover:bg-[#201d1f0b]">
+            className="text-sm cursor-pointer font-semibold leading-6 py-1 px-2 transition-all duration-300 text-gray-900 rounded-full hover:bg-[#201d1f0b]">
             Projects
           </button>
           <button
             onClick={() => setContactMeOpen(true)}
-            className="text-sm font-semibold leading-6 py-1 px-2 transition-all duration-300 text-gray-900 rounded-full hover:bg-[#201d1f0b]">
+            className="text-sm cursor-pointer font-semibold leading-6 py-1 px-2 transition-all duration-300 text-gray-900 rounded-full hover:bg-[#201d1f0b]">
             Contact Me
           </button>
         </section>
@@ -117,7 +117,7 @@ export default function Header({contactMe, setContactMeOpen, setProjectsOpen, pr
       </Section>
 
       <Section section={contactMe} setSection={setContactMeOpen}>
-        <ContactButtons/>
+        <ContactButtons />
       </Section>
     </header>
   );

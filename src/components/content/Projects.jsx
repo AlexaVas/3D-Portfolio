@@ -9,6 +9,15 @@ export default function Projects() {
   
   const [projects, setProjects] = useState([
     {
+      key: 13,
+      name: "Scroll Animation - OPTOMAN",
+      description: "Scroll Animation",
+      technologies: ["Three.js", "GSAP", "Blender"],
+      img: "/pictures/Optoman_Project.jpg",
+      dimension: "3D",
+      link: "https://optoman-scroll-animation.vercel.app/",
+    },
+    {
       key: 12,
       name: "Ring Configurator",
       description: "Configurator",
@@ -19,7 +28,7 @@ export default function Projects() {
     },
     {
       key: 7,
-      name: "Hyven - Customer",
+      name: "Metaverse - Hyven",
       description: "3D World",
       technologies: ["R3F", "React", "GLSL"],
       img: "/pictures/hyven.jpg",
