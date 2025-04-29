@@ -29,7 +29,7 @@ export default function Experience({setScroll, setContactMeOpen, setProjectsOpen
           }>
           <Environment />
 
-          <ScrollControls pages={6} damping={0.5}>
+          <ScrollControls pages={7} damping={0.5}>
             <Land />
 
             <Movement setContactMeOpen={setContactMeOpen} />

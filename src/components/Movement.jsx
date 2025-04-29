@@ -48,9 +48,9 @@ useFrame((state, delta) => {
 //character
 if (scroll.offset > 0.95) {
   pointAnimation()
-} else if ((scroll.offset > 0.8) & (scroll.offset < 0.95)) {
+} else if ((scroll.offset > 0.85) & (scroll.offset < 0.95)) {
   sittingAnimation();
-} else if (scroll.offset > 0.6 && scroll.offset < 0.8) {
+} else if (scroll.offset > 0.7 && scroll.offset < 0.85) {
   waveAnimation();
 } else {
   idleAnimation();
@@ -68,27 +68,18 @@ if (scroll.offset > 0.95) {
       });
 
       tl.current
-        .to(camera.position, { y: 2 }, 0)
-        .to(camera.position, { x: -10 }, 0)
-        .to(camera.position, { z: -5 }, 0)
+       
 
-        .to(camera.position, { x: 10 }, 2)
-        .to(camera.position, { z: -6 }, 2)
+        .to(camera.position, { y: 2, x: -10, z: -5 }, 0)
+        .to(camera.position, { x: 10, z: -6 }, 2)
+        .to(camera.position, { x: 8, z: 2,y:3 }, 4)
 
-        .to(camera.position, { x: 8 }, 4)
-        .to(camera.position, { z: 3 }, 4)
+        .to("#testimonial_one", { opacity: 0, duration: 0.5 }, ">+=0.5")
+        .to("#testimonial_two", { opacity: 0, duration: 0.5 }, ">")
+        .to("#testimonial_three", { opacity: 0, duration: 0.5 }, ">")
 
-        .to(camera.position, { y: 1 }, 6)
-        .to(camera.position, { x: 3 }, 6)
-        .to(camera.position, { z: 0 }, 6)
-
-        // .to(camera.position, { y: 0 }, 8)
-        // .to(camera.position, { x: -1 }, 8)
-        // .to(camera.position, { z: -0.6 }, 8)
-
-        .to(camera.position, { y: 0.25 }, 8)
-        .to(camera.position, { x: -0.3 }, 8)
-        .to(camera.position, { z: -0.4 }, 8);
+        .to(camera.position, { y: 0.9, x: 3, z: 0 }, 8)
+        .to(camera.position, { y: 0.25, x: -0.3, z: -0.4 }, 10);
         
     }
   }, [camera]);

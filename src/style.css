@@ -50,8 +50,44 @@ body,
 }
 
 
+
+.shift-every-first div:nth-child(odd) {
+    transform: translateX(5dvw);
+}
+
+@media screen and (max-width: 600px) {
+    .shift-every-first div:nth-child(odd) {
+            transform: translateX(0dvw);
+        }
+}
 /* @supports (height: 1001vh) {
     body {
         height: 1001vh;
     }
 } */
+
+
+/* Custom scrollbar */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: #f3f4f600;
+    /* light background */
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background-color: #D8B4FE;
+    /* purple-300 */
+    border-radius: 10px;
+    
+}
+/* Firefox scrollbar (optional for better cross-browser support) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D8B4FE #f3f4f600;
+}
